@@ -1,0 +1,53 @@
+{
+  "name": "genpark-personal-agent-glycemic-load-insulin-index-builder-skill",
+  "version": "1.0.0",
+  "title": "Glycemic Load & Food Insulin Index (FII) Meal Builder Skill",
+  "description": "Glycemic index (GI) vs Glycemic load (GL) computation, Food Insulin Index (FII) food pairing, and postprandial insulin AUC minimizer. Built for GenPark (https://www.genpark.ai).",
+  "homepage": "https://www.genpark.ai",
+  "linkedin": "https://www.linkedin.com/company/92955550",
+  "category": "personal-agent",
+  "topics": [
+    "glycemic-load",
+    "insulin-index",
+    "metabolism",
+    "dietary-optimization",
+    "personal-agent",
+    "model-context-protocol",
+    "genpark"
+  ],
+  "tools": [
+    {
+      "name": "calculate_meal_glycemic_load_and_insulin_score",
+      "description": "Calculate total meal Glycemic Load (GL) and Food Insulin Demand score from component ingredients.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "ingredients": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          }
+        },
+        "required": [
+          "ingredients"
+        ]
+      }
+    },
+    {
+      "name": "prescribe_low_insulinemic_food_pairings",
+      "description": "Synthesize fiber, healthy lipid, and acid modifiers to blunt postprandial insulin surge.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "baseline_meal_gl": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "baseline_meal_gl"
+        ]
+      }
+    }
+  ]
+}
